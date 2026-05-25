@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class DosenController extends Controller
 {
 
-    public function index(){
+    public function index1(){
     return "<h1>Halo ini adalah method index, dalam controller DosenController. - www.malasngoding.com</h1>";
 }
 
