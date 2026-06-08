@@ -72,3 +72,8 @@ Route::get('/pegawaiedit/{id}', [PegawaiDBController::class, 'edit']);
 Route::post('/pegawaiupdate', [PegawaiDBController::class, 'update']);
 Route::get('/pegawaihapus/{id}', [PegawaiDBController::class, 'hapus']);
 Route::get('/pegawaicari', [PegawaiDBController::class, 'cari']);
+use App\Http\Controllers\NilaikuliahController;
+//percobaan eas
+Route::get('/nilaikuliah', [NilaikuliahController::class, 'index']);
+Route::get('/nilaikuliahtambah', [NilaikuliahController::class, 'create']);
+Route::post('/nilaikuliahstore', [NilaikuliahController::class, 'store']);

@@ -45,16 +45,15 @@
             <a href="index.html" class="logo d-flex align-items-center me-auto">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="assets/img/logo.webp" alt=""> -->
-                <h1 class="sitename">@yield('title')</h1>
-            </a>
+<h1 class="sitename" style="color: black;">@yield('title')</h1>            </a>
 
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="/pegawai">Pegawai</a></li>
                     <li><a href="">PR</a></li>
-                    <li><a href="">PR</a></li>
                     <li><a href="">Pertemuan 15</a></li>
                     <li><a href="">EAS</a></li>
+                    <li><a href="/nilaikuliah">Nilaikuliah</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -65,7 +64,6 @@
     <main class="main">
         <!-- bagian konten blog -->
         @yield('konten')
-
     </main>
 
     <!-- Scroll Top -->
