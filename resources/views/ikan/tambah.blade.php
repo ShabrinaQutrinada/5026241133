@@ -1,39 +1,40 @@
 @extends('template')
-@section('title', 'Tambah Nilai Kuliah')
+@section('title', 'Tambah Ikan')
 @section('konten')
     <center>
         <br />
         <div class="card">
-            <div class="card-header">Form Tambah Data Nilai Kuliah</div>
+            <div class="card-header">Form Tambah Data Ikan</div>
             <div class="card-body">
-                <form action="/nilaikuliahstore" method="POST">
+                <form action="/praeasstore" method="POST">
                     {{ csrf_field() }}
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">NRP</label>
+                        <label class="col-sm-2 col-form-label">Nama Ikan</label>
                         <div class="col-sm-10">
-                            <input type="text" name="NRP" class="form-control" maxlength="6" required>
+                            <input type="text" name="namaikan" class="form-control" maxlength="30" required>
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Nilai Angka</label>
+                        <label class="col-sm-2 col-form-label">Jumlah</label>
                         <div class="col-sm-10">
-                            <input type="number" name="NilaiAngka" class="form-control" required>
+                            <input type="number" name="jumlahikan" class="form-control" required>
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">SKS</label>
+                        <label class="col-sm-2 col-form-label">Tersedia (Y/N)</label>
                         <div class="col-sm-10">
-                            <input type="number" name="SKS" class="form-control" required>
+                            <input type="text" name="tersedia" class="form-control" maxlength="1" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="offset-sm-2 col-sm-10">
                             <input type="submit" value="Simpan Data" class="btn btn-primary">
-                            <a href="/nilaikuliah" class="btn btn-secondary">Kembali</a>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+        <br />
+        <a href="/praeas" class="btn btn-info">Kembali</a>
     </center>
 @endsection

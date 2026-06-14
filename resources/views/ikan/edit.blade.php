@@ -1,0 +1,43 @@
+@extends('template')
+@section('title', 'Edit Ikan')
+@section('konten')
+    <center>
+        <br />
+        @foreach ($ikan as $i)
+        <div class="card">
+            <div class="card-header">Form Edit Data Ikan</div>
+            <div class="card-body">
+                <form action="/praeasupdate" method="POST">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="id" value="{{ $i->kodeikan }}">
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Nama Ikan</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="namaikan" class="form-control" maxlength="30" value="{{ $i->namaikan }}" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Jumlah</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="jumlahikan" class="form-control" value="{{ $i->jumlahikan }}" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="col-sm-2 col-form-label">Tersedia (Y/N)</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="tersedia" class="form-control" maxlength="1" value="{{ $i->tersedia }}" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="offset-sm-2 col-sm-10">
+                            <input type="submit" value="Update Data" class="btn btn-primary">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        @endforeach
+        <br />
+        <a href="/praeas" class="btn btn-info">Kembali</a>
+    </center>
+@endsection

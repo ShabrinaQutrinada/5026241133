@@ -65,15 +65,41 @@ Route::post('/formulir/proses', [PegawaiController::class, 'proses']);
 
 //CRUD TABEL PEGAWAI
 Route::get('/pegawai', [PegawaiDBController::class, 'index']);
-
 Route::get('/pegawaitambah', [PegawaiDBController::class, 'tambah']);
 Route::post('/pegawaistore', [PegawaiDBController::class, 'store']);
 Route::get('/pegawaiedit/{id}', [PegawaiDBController::class, 'edit']);
 Route::post('/pegawaiupdate', [PegawaiDBController::class, 'update']);
 Route::get('/pegawaihapus/{id}', [PegawaiDBController::class, 'hapus']);
 Route::get('/pegawaicari', [PegawaiDBController::class, 'cari']);
-use App\Http\Controllers\NilaikuliahController;
+
 //percobaan eas
+use App\Http\Controllers\NilaikuliahController;
 Route::get('/nilaikuliah', [NilaikuliahController::class, 'index']);
 Route::get('/nilaikuliahtambah', [NilaikuliahController::class, 'create']);
 Route::post('/nilaikuliahstore', [NilaikuliahController::class, 'store']);
+
+//SIAP EAS-KERANJANG BELANJA
+use App\Http\Controllers\KeranjangBelanjaController;
+Route::get('/keranjang', [KeranjangBelanjaController::class, 'index'])->name('keranjang.index');
+Route::get('/keranjang/tambah', [KeranjangBelanjaController::class, 'create'])->name('keranjang.create');
+Route::post('/keranjang/simpan', [KeranjangBelanjaController::class, 'store'])->name('keranjang.store');
+Route::delete('/keranjang/{id}', [KeranjangBelanjaController::class, 'destroy'])->name('keranjang.destroy');
+
+//PRA EAS
+use App\Http\Controllers\IkanController;
+Route::get('/praeas', [IkanController::class, 'index']);
+Route::get('/praeastambah', [IkanController::class, 'tambah']);
+Route::post('/praeasstore', [IkanController::class, 'store']);
+Route::get('/praeaseedit/{id}', [IkanController::class, 'edit']);
+Route::post('/praeasupdate', [IkanController::class, 'update']);
+Route::get('/praeashapus/{id}', [IkanController::class, 'hapus']);
+Route::get('/praeascari', [IkanController::class, 'cari']);
+
+//route CRUD siswa
+use App\Http\Controllers\SiswaController;
+Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
+Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
+Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
+Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
