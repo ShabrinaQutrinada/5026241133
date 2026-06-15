@@ -1,3 +1,4 @@
+
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
@@ -103,3 +104,9 @@ Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
 Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
 Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
 Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+
+//route CRUD PENGAAJIAN-EAS
+use App\Http\Controllers\PenggajianController;
+Route::get('/eas', [PenggajianController::class, 'index']);
+Route::get('/eastambah', [PenggajianController::class, 'tambah']);
+Route::post('/easstore', [PenggajianController::class, 'store']);

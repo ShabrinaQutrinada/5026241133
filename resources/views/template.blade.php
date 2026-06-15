@@ -20,25 +20,22 @@
             <div class="container-fluid">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('pegawai*') ? 'active' : '' }}" href="/pegawai">Pegawai</a>
+                        <a class="nav-link" href="/pegawai">Pegawai</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('praeas*') ? 'active' : '' }}" href="/praeas">Ikan</a>
+                        <a class="nav-link" href="/praeas">Ikan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('siswa*') ? 'active' : '' }}" href="/siswa">Siswa</a>
-                    </li>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('nilaikuliah*') ? 'active' : '' }}" href="/nilaikuliah">PR
-                            2</a>
+                        <a class="nav-link" href="/siswa">Siswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('keranjang*') ? 'active' : '' }}" href="/keranjang">PR 3</a>
+                        <a class="nav-link" href="/nilaikuliah">PR 2</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">EAS</a>
+                        <a class="nav-link" href="/keranjang">PR 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/eas">EAS</a>
                     </li>
                 </ul>
             </div>
